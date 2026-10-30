@@ -1,0 +1,197 @@
+/* ---------- Colours (from my Figma design) ---------- */
+:root {
+  --blue: #2563EB;
+  --blue-dark: #1D4ED8;
+  --ink: #1F2937;
+  --muted: #4B5563;
+  --card: #F3F4F6;
+  --line: #E5E7EB;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+h1, h2, h3 { line-height: 1.2; }
+
+/* ---------- Layout width ---------- */
+header, main > section, footer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ---------- Header and navigation ---------- */
+header { border-bottom: 1px solid var(--line); }
+
+header > a {
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a { color: var(--ink); text-decoration: none; font-weight: bold; }
+nav a:hover { color: var(--blue); }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--card); }
+.hero form { margin-top: 1.5rem; }
+.hero label { display: block; margin-bottom: .25rem; font-weight: bold; }
+
+input {
+  padding: .7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: .75rem;
+}
+
+button {
+  background: var(--blue);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: .7rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover { background: var(--blue-dark); }
+
+/* ---------- Room cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+article {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+article img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+article h3, article p, article a {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.price { font-weight: bold; font-size: 1.125rem; }
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+Send a message...
+
+/* ---------- Forms and extra pages ---------- */
+select, textarea {
+  width: 100%;
+  padding: .7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: .75rem;
+}
+
+.filters, .contact-form {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.filters label, .contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .25rem;
+}
+
+fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
+fieldset label { font-weight: normal; }
+fieldset input { width: auto; margin-right: .5rem; }
+
+.detail-photo { border-radius: 10px; margin-bottom: 1rem; }
+
+.button-link {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  padding: .7rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+Send a message...
+
+/* ---------- Tablet: 768px and up ---------- */
+@media (min-width: 768px) {
+  h1 { font-size: 2.5rem; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul { margin: 0; }
+
+  .hero form {
+    display: flex;
+    gap: .75rem;
+    align-items: end;
+  }
+
+  .hero form label { display: none; }
+  .hero form input { margin-bottom: 0; }
+
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Desktop: 1024px and up ---------- */
+@media (min-width: 1024px) {
+  h1 { font-size: 3rem; }
+
+  .hero { padding-top: 3rem; padding-bottom: 3rem; }
+
+  .cards { grid-template-columns: repeat(3, 1fr); }
+
+  .listing-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .listing-layout .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+Send a message...
+
